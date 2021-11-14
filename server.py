@@ -2,8 +2,8 @@ import requests
 import os
 from flask import Flask, request
 
-SERVER_IP = '0.0.0.0'   # Edit this line
-PORT = 9000
+#SERVER_IP = '0.0.0.0'   # Edit this line
+#PORT = 33507
 
 kiran = Flask(__name__)
 
@@ -21,7 +21,9 @@ def playlist_generator():
             code = line[1].strip()
             logo = line[2].strip()
             playlist += f'\n#EXTINF:-1 tvg-id="{code}" group-title="US" tvg-logo="{logo}", {name}'
-            playlist += f'\nhttp://{SERVER_IP}:{PORT}/channels?id={code}'
+#            playlist += f'\nhttp://{SERVER_IP}:{PORT}/channels?id={code}'
+            playlist += f'\nhttp://kiranus.herokuapp.com/channels?id={code}'
+
     return playlist
 
 @kiran.route('/channels')
@@ -35,4 +37,4 @@ def getChannel():
     return head + base + m3u
 
 if __name__ == '__main__':
-    kiran.run('0.0.0.0', PORT)
+    app.run()
