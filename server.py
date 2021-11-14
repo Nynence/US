@@ -24,7 +24,7 @@ def playlist_generator():
             playlist += f'\nhttp://{SERVER_IP}:{PORT}/channels?id={code}'
     return playlist
 
-@app.route('/channels')
+@kiran.route('/channels')
 def getChannel():
     code = request.args.get('id')
     data = {'stream' : code}
