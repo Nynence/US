@@ -2,7 +2,7 @@ import requests
 import os
 from flask import Flask, request
 
-SERVER_IP = 'kiranmate.ddns.net'   # Edit this line
+SERVER_IP = '0.0.0.0'   # Edit this line
 PORT = 9000
 
 app = Flask(__name__)
