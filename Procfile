@@ -1,1 +1,1 @@
-web: gunicorn server:kiran
+web: gunicorn server:app
