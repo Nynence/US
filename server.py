@@ -5,9 +5,9 @@ from flask import Flask, request
 SERVER_IP = '0.0.0.0'   # Edit this line
 PORT = 9000
 
-app = Flask(__name__)
+kiran = Flask(__name__)
 
-@app.route('/ustvgo.m3u')
+@kiran.route('/ustvgo.m3u')
 def playlist_generator():
     playlist = '#EXTM3U'
     info_file = f'{os.path.dirname(__file__)}/ustvgo_channel_info.txt'
@@ -35,4 +35,4 @@ def getChannel():
     return head + base + m3u
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', PORT)
+    kiran.run('0.0.0.0', PORT)
