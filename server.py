@@ -7,7 +7,7 @@ PORT = 9000
 
 app = Flask(__name__)
 
-@app.route('/International.m3u')
+@app.route('/ustvgo.m3u')
 def playlist_generator():
     playlist = '#EXTM3U'
     info_file = f'{os.path.dirname(__file__)}/ustvgo_channel_info.txt'
